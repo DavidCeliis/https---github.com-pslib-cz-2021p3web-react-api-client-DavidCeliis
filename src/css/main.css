@@ -1,0 +1,92 @@
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+
+  
+  padding: 10px;
+  
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+input[type=text] {
+    border: 2px solid grey;
+    border-radius: 4px;
+    margin: 5px;
+  }
+
+button{
+    background-color: #3498db; 
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 4px;
+}
+button:hover {
+    background-color: #246a99; 
+  }
+.Delete{
+    background-color: rgb(231, 1, 1);
+   
+}
+.Delete:hover{
+    background-color: rgb(167, 0, 0);
+}
+li{
+    text-decoration: none;
+    
+}
+.footer {
+  clear: both;
+  position: relative;
+  height: 50px;
+  background-color: grey;
+  color: white;
+  text-align: center;
+}
+.topnav {
+  overflow: hidden;
+  background-color: grey;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #3498db;
+  color: white;
+}

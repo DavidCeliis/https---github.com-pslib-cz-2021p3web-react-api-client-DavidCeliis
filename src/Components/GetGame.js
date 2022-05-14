@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../css/main.css';
+import { FaTrashAlt } from 'react-icons/fa';
+import {Tooltip} from "reactstrap";
+
 
   export default function GetGame() {
 
@@ -7,6 +11,7 @@ import axios from 'axios';
       const[games, setGames]= useState([]);
       const Delete= (id) => {
         axios.delete(`http://localhost:54434/api/Game/${id}`)
+        setTimeout(GetGame, 500);
         window.location.reload();
       }
       useEffect(()=>{
@@ -31,22 +36,22 @@ import axios from 'axios';
 
  
     if(loading){
-      return(<h1>Loading...</h1>)
+      return(<div className="loader"></div>)
     }
     return (
-      <ul>
+      <div>
         {
           games
             .map(game => {
               return(
-              <div key={game.GameId}>
-                <li key={game.GameId}>{game.GameName},{game.GenreId}</li>
-                <button onClick={() => Delete(game.GameId)}></button>
+              <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} key={game.GameId}>
+                <p key={game.GameId}>{game.GameName},{game.GenreId}</p>
+                <button title="Delete"className='Delete' onClick={() => Delete(game.GameId)}><FaTrashAlt/></button>
               </div>
               )
               }
             )
         }
-      </ul>
+      </div>
     )
   }

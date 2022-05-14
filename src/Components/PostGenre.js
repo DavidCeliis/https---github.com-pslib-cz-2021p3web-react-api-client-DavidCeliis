@@ -23,7 +23,7 @@ export default function App() {
              Genre:
              <input type="text" name="GenreName" onChange={e => setPostName(e.target.value)} />
            </label>
-           <button title="Add" onClick={createPost}><FaPlus/></button>
+           <button title="Add"onClick={createPost}><FaPlus/></button>
          </form>
       </div>
 
