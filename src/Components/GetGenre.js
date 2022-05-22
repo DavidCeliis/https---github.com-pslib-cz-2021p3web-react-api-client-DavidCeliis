@@ -30,7 +30,7 @@ import '../css/main.css';
             .map(genre => {
               return(
               <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} key={genre.GenreId}>
-                <p key={genre.GenreId}>{genre.GenreName},{genre.Games}</p>
+                <p key={genre.GenreId}>{genre.GenreName}</p>
                 <button title="Delete" className='Delete' onClick={() => Delete(genre.GenreId)}><FaTrashAlt/></button>
               </div>
               )
