@@ -29,8 +29,8 @@ import '../css/main.css';
           genres
             .map(genre => {
               return(
-              <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} key={genre.GenreId}>
-                <p key={genre.GenreId}>{genre.GenreName}</p>
+              <div className='grid-container-genre' key={genre.GenreId}>
+                <span className='grid-item-genre' key={genre.GenreId}>{genre.GenreName}</span>
                 <button title="Delete" className='Delete' onClick={() => Delete(genre.GenreId)}><FaTrashAlt/></button>
               </div>
               )

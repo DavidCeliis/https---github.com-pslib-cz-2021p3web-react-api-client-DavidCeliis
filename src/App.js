@@ -4,7 +4,7 @@ import GetGame from './Components/GetGame';
 import GetGenre from './Components/GetGenre';
 import PostGame from './Components/PostGame';
 import PostGenre from './Components/PostGenre';
-import { FaGamepad } from 'react-icons/fa';
+import { FaCalculator, FaCar, FaCube, FaCubes, FaGamepad, FaOptinMonster, FaTrash, FaTrophy } from 'react-icons/fa';
 
 
 import {Container, Navbar, NavbarBrand, Collapse, Nav,NavItem,NavLink, NavbarToggler} from "reactstrap";
@@ -14,31 +14,34 @@ import {Container, Navbar, NavbarBrand, Collapse, Nav,NavItem,NavLink, NavbarTog
 function App() {
   return (
     <div className="App">
-      <div className="topnav" style={{ marginBottom: "100px" }}>
-        <a className="active" href="http://localhost:3000/"><FaGamepad/></a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+      <div className="topnav">
+        <span style={{backgroundColor: "blue"}} href="http://localhost:3000/"><FaGamepad/></span>
+        <span style={{backgroundColor: "red"}} href="http://localhost:3000/"><FaCar/></span>
+        <span style={{backgroundColor: "green"}} href="http://localhost:3000/"><FaTrophy/></span>
+        <span  style={{backgroundColor: "orange"}} href="http://localhost:3000/"><FaCube/></span>
       </div>
-      <div style={{paddingBottom: "100px"}}>
+      <h3>GamesAndGenres</h3>
+      <div className='grid-container-app'>
       <Container style={{border: '2px solid grey', padding: "20px", borderRadius: "5px", marginBottom:"20px"}}>
-      <h1>Games</h1>
-      <GetGame/>
-      </Container>
-      <Container style={{border: '2px solid grey', padding: "20px", borderRadius: "5px"}}>
       <h2>Add new game</h2>
       <PostGame/>
-      </Container>
+      <h1>Games</h1>
+      <div className='grid-container'>
+      <span>Games</span>
+      <span><FaTrash/></span>
+      <span>Genres</span>
       </div>
-      <div style={{paddingBottom: "100px"}}>
-      <Container style={{border: '2px solid grey', padding: "20px", borderRadius: "5px", marginBottom:"20px"}}>
-      <h1>Genres</h1>
-      <GetGenre/>
+      <GetGame/>
       </Container>
-      <Container style={{border: '2px solid grey', padding: "20px", borderRadius: "5px"}}>
+      <Container style={{border: '2px solid grey', padding: "20px", borderRadius: "5px", marginBottom:"20px"}}>
       <h2>Add new genre</h2>
       <PostGenre/>
-      
+      <h1>Genres</h1>
+      <div className='grid-container-genre'>
+      <span>Genres</span>
+      <span><FaTrash/></span>
+      </div>
+      <GetGenre/>
       </Container>
       </div>
       <div className="footer">

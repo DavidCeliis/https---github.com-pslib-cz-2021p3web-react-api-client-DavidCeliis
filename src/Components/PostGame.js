@@ -20,7 +20,7 @@ export default function App() {
       <div>
          <form>
            <label>
-             Genre:
+             Game:
              <input type="text" name="GenreName" onChange={e => setPostName(e.target.value)} />
            </label>
            <button title="Add" onClick={createPost}><FaPlus/></button>

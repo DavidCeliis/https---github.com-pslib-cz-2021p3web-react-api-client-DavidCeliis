@@ -54,18 +54,24 @@ import {Tooltip} from "reactstrap";
           games
             .map(game => {
               return(
-              <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} key={game.GameId}>
-                <p>{game.GameName}</p>
+             
+              <div>
+                <div className='grid-container' key={game.GameId}>
+                <span className='grid-item'>{game.GameName}</span>
+                <button title="Delete"className='Delete grid-item' onClick={() => Delete(game.GameId)}><FaTrashAlt/></button>
                 {genres.map(genre =>{
                   if(genre.GenreId === game.GenreId){
                     console.log(genre);
-                    return (<p style={{paddingLeft:"5px"}}>{genre.GenreName}</p>
+                    return (<span className='grid-item'>{genre.GenreName}</span>
                     
                     )
                   }
+                  else{
+                    <p>no genre</p>
+                  }
 
                 })}
-                <button title="Delete"className='Delete' onClick={() => Delete(game.GameId)}><FaTrashAlt/></button>
+                </div>
               </div>
               )
               
