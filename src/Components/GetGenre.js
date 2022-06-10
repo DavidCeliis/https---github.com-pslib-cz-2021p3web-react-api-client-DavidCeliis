@@ -7,24 +7,33 @@ import '../css/main.css';
 
       const[loading, setLoading]= useState(true);
       const[genres, setGenres]= useState([]);
+      const [GenreNameSearch, setGenreNameSearch] = useState("");
       const Delete= (id) => {
         axios.delete(`http://localhost:54434/api/Genres/${id}`)
         window.location.reload();
       }
       useEffect(()=>{
-        axios.get(`http://localhost:54434/api/Genres`)
+        axios.get(`http://localhost:54434/api/Genres/name?name=` + GenreNameSearch)
         .then(res => {
           const genres = res.data;
           setGenres(genres)
           setLoading(false);
         })
-      },[]) 
- 
+      },[GenreNameSearch]) 
+      function handleChange(e) {
+        setGenreNameSearch(e.target.value);
+    }
     if(loading){
       return(<div className="loader"></div>)
     }
     return (
       <div>
+        Search:
+        <input type="text" onChange={handleChange} />
+        <div className='grid-container-genre'>
+        <span>Genre</span>
+        <span><FaTrashAlt/></span>
+        </div>
         {
           genres
             .map(genre => {
