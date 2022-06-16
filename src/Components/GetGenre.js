@@ -9,11 +9,11 @@ import '../css/main.css';
       const[genres, setGenres]= useState([]);
       const [GenreNameSearch, setGenreNameSearch] = useState("");
       const Delete= (id) => {
-        axios.delete(`http://localhost:54434/api/Genres/${id}`)
+        axios.delete(`http://localhost:54434/api/Genres?id=${id}`)
         window.location.reload();
       }
       useEffect(()=>{
-        axios.get(`http://localhost:54434/api/Genres/name?name=` + GenreNameSearch)
+        axios.get(`http://localhost:54434/api/Genres?name=` + GenreNameSearch)
         .then(res => {
           const genres = res.data;
           setGenres(genres)

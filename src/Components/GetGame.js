@@ -12,14 +12,14 @@ import { FaTrashAlt } from 'react-icons/fa';
       const[genres, setGenres]= useState([]);
       const [GameNameSearch, setGameNameSearch] = useState("");
       const Delete= (id) => {
-        axios.delete(`http://localhost:54434/api/Game/${id}`)
+        axios.delete(`http://localhost:54434/api/Game?id=${id}`)
         setTimeout(GetGame, 500);
         window.location.reload();
        
        
       }
       useEffect(()=>{
-        axios.get(`http://localhost:54434/api/Game/name?name=` + GameNameSearch)
+        axios.get(`http://localhost:54434/api/Game?name=` + GameNameSearch)
         .then(res => {
           const games = res.data;
           setGames(games)
